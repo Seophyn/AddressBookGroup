@@ -2,7 +2,11 @@ package Jimmy.AddressBookGroup.core;
 
 public class CommandInterpreter{
 
-    public Command interpret(CommandLine commandLine) throws InvalidCommandException {
-        Command command
+    public void interpret(CommandLine commandLine) throws InvalidCommandException {
+        switch(commandLine.command){
+            case("add"):
+                System.out.println(commandLine.parameters);
+
+        }
     }
 }

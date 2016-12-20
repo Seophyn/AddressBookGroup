@@ -1,14 +1,18 @@
 package Jimmy.AddressBookGroup.core;
 
-public class Console implements ConsolePrinter {
-    InputHandler inputHandler = new InputHandler() {
-        @Override
-        public void handle(CommandLine commandLine) {
+import java.util.Scanner;
 
-        }
-    };
+public class Console implements ConsolePrinter {
+    InputHandler handler;
 
     public void registerInputHandler(InputHandler handler){
+        while (true){
+            Scanner scanner = new Scanner(System.in);
+            String scanString = scanner.toString();
+            handler.handle(CommandLine.parse(scanString));
+
+
+        }
 
     }
 

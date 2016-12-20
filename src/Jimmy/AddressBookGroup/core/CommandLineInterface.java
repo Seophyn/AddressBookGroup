@@ -3,6 +3,13 @@ package Jimmy.AddressBookGroup.core;
 public class CommandLineInterface implements InputHandler{
 
     CommandInterpreter commandInterpreter = new CommandInterpreter();
+    Console console = new Console();
+
+    public void fuckshit(){
+        console.registerInputHandler();
+    }
+
+
 
     @Override
     public void handle(CommandLine commandLine) {
