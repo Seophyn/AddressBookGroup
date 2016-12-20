@@ -9,6 +9,7 @@ public class Application {
     }
 
     public static void quit(){
+        System.out.println("Exiting program, goodbye!");
         System.exit(0);
     }
 
