@@ -15,6 +15,6 @@ public class Application {
 
     public void start(){
         commandLineInterface = new CommandLineInterface();
-        commandLineInterface.fuckshit();
+        commandLineInterface.console.registerInputHandler(commandLineInterface);
     }
 }

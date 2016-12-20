@@ -5,22 +5,22 @@ public class CommandInterpreter{
     public void interpret(CommandLine commandLine) throws InvalidCommandException {
         switch(commandLine.command){
             case("add"):
-                new AddContactCommand(commandLine.parameters);
+                new AddContactCommand();
 
             case("delete"):
-                new DeleteContactCommand(commandLine.parameters);
+                new DeleteContactCommand();
 
             case("list"):
-                new ListCommand(commandLine.parameters);
+                new ListCommand();
 
             case("search"):
-                new SearchCommand(commandLine.parameters);
+                new SearchCommand();
 
             case("quit"):
-                new QuitCommand(commandLine.parameters); //todo INTE STATIC APPARENTLY, BULLSHIT.
+                new QuitCommand(); //todo INTE STATIC APPARENTLY, BULLSHIT.
                 break;
             case ("help"):
-                new HelpCommand(commandLine.parameters);
+                new HelpCommand();
             default:
                 System.out.println("Invalid command.");
                 break;

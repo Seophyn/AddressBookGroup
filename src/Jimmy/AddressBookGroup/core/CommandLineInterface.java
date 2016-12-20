@@ -3,10 +3,10 @@ package Jimmy.AddressBookGroup.core;
 public class CommandLineInterface implements InputHandler{
 
     CommandInterpreter commandInterpreter = new CommandInterpreter();
+    Console console = new Console();
 
     @Override
     public void handle(CommandLine commandLine) {
-        new Console().registerInputHandler(this);
         try {
             commandInterpreter.interpret(commandLine);
         } catch (InvalidCommandException e) {
