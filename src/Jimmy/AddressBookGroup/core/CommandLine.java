@@ -5,8 +5,8 @@ import java.util.List;
 
 public class CommandLine{
 
-    String command;
-    List<String> parameters;
+    private String command;
+    private List<String> parameters;
 
     public static CommandLine parse(String string){
         CommandLine commandLine = new CommandLine();
