@@ -24,7 +24,7 @@ public class AddContactCommand implements Command {
 
     }
 
-    public void validate() {
+    public void isValidParameterCount() {
         //
     }
 }

@@ -22,7 +22,7 @@ public class DeleteContactCommand implements Command {
 
     }
 
-    public void validate(){
+    public void isValidParameterCount(){
 
 
     }
