@@ -8,7 +8,7 @@ public class Application {
         application.start();
     }
 
-    public void quit(){
+    public static void quit(){
         System.exit(0);
     }
 

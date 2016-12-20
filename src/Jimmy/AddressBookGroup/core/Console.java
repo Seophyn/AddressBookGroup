@@ -3,7 +3,7 @@ package Jimmy.AddressBookGroup.core;
 import java.util.Scanner;
 
 public class Console implements ConsolePrinter {
-    InputHandler handler = commandLine -> {
+    InputHandler inputHandler = commandLine -> {
 
     };
 
