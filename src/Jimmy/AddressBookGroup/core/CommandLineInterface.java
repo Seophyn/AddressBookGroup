@@ -6,7 +6,7 @@ public class CommandLineInterface implements InputHandler{
     Console console = new Console();
 
     public void fuckshit(){
-        console.registerInputHandler();
+        console.registerInputHandler(this);
     }
 
 

@@ -4,7 +4,8 @@ public class Application {
     CommandLineInterface commandLineInterface;
 
     public static void main(String[] args) {
-
+        Application application = new Application();
+        application.start();
     }
 
     public void quit(){
@@ -13,5 +14,6 @@ public class Application {
 
     public void start(){
         commandLineInterface = new CommandLineInterface();
+        commandLineInterface.fuckshit();
     }
 }

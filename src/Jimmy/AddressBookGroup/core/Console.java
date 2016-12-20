@@ -3,14 +3,16 @@ package Jimmy.AddressBookGroup.core;
 import java.util.Scanner;
 
 public class Console implements ConsolePrinter {
-    InputHandler handler;
+    InputHandler handler = commandLine -> {
 
-    public void registerInputHandler(InputHandler handler){
+    };
+
+    public void registerInputHandler(CommandLineInterface handler){
+        Scanner scanner = new Scanner(System.in);
         while (true){
-            Scanner scanner = new Scanner(System.in);
-            String scanString = scanner.toString();
+            System.out.println("write");
+            String scanString = scanner.nextLine();
             handler.handle(CommandLine.parse(scanString));
-
 
         }
 
