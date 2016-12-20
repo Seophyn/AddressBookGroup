@@ -8,12 +8,13 @@ public class Console implements ConsolePrinter {
     };
 
     public void registerInputHandler(CommandLineInterface handler){
+        System.out.println("Welcome to the Addressbook! Write ");
         Scanner scanner = new Scanner(System.in);
+
         while (true){
             System.out.println("write");
             String scanString = scanner.nextLine();
             handler.handle(CommandLine.parse(scanString));
-
         }
 
     }
