@@ -6,5 +6,8 @@ public class Console implements ConsolePrinter {
 
     }
 
-
+    @Override
+    public void print(String string) {
+        System.out.println(string);
+    }
 }

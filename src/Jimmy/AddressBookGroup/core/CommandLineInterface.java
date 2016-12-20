@@ -1,6 +1,9 @@
 package Jimmy.AddressBookGroup.core;
 
-public class CommandLineInterface {
+public class CommandLineInterface implements InputHandler{
 
-    public void handler(CommandLine commandLine){}
+    @Override
+    public void handle(CommandLine commandLine) {
+
+    }
 }
