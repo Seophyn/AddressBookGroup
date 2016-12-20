@@ -1,14 +1,18 @@
 package Jimmy.AddressBookGroup.core;
 
+import java.util.Arrays;
 import java.util.List;
 
-public class CommandLine implements  InputHandler{
+public class CommandLine{
 
     String command;
     List<String> parameters;
 
     public static CommandLine parse(String string){
-        CommandLine commandLine  = CommandLine.parse(string);
+        CommandLine commandLine = new CommandLine();
+        commandLine.parameters = Arrays.asList(string.split(" "));
+        commandLine.command = commandLine.parameters.get(0);
+        commandLine.parameters.remove(0);
         return commandLine;
     }
 }
