@@ -28,6 +28,7 @@ public class Application {
 
 /*
 //todo CHANGES:
+//todo Quit is static, change?
 //todo Application start method.
 //todo QuitCommand execute and constructor
 //todo Not closing scanner in console.

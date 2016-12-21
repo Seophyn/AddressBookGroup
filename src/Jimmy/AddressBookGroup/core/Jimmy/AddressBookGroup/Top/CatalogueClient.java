@@ -9,5 +9,9 @@ public class CatalogueClient {
 
     public void sendRequest(String string){}
 
+    public String waitForResponse(){
+        return null;
+    }
+
     public void disconnect(){}
 }

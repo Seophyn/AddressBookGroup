@@ -15,6 +15,7 @@ public class AutoSave implements Runnable {
             }
 
             registryPersister.save();
+            System.out.println("Autosave Successful");
         }
     }
 }

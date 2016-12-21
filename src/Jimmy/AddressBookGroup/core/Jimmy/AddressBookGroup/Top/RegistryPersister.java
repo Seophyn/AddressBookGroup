@@ -21,6 +21,9 @@ public class RegistryPersister {
     }
     @SuppressWarnings("unchecked")
     public void load(){
+        Runnable autosave = new AutoSave();
+        Thread saveThread = new Thread(autosave);
+        saveThread.start();
         if (file.isFile()) {
             try (ObjectInputStream read = new ObjectInputStream(new FileInputStream("registry"))) {
                 registry.setContacts((List<Contact>) read.readObject());
