@@ -11,7 +11,8 @@ public class AddContactCommand implements Command {
         this.parameters = parameters;
     }
 
-
+    public AddContactCommand() {
+    }
 
     @Override
     public String getname() {
@@ -24,11 +25,11 @@ public class AddContactCommand implements Command {
     }
 
     @Override
-    public void execute() throws InvalidCommandParameterException {
+    public void execute()  {
 
     }
 
-    public void isValidParameterCount() {
+    public void validate() throws InvalidCommandParameterException {
         //
     }
 }

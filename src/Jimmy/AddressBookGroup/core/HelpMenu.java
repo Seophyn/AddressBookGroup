@@ -3,16 +3,14 @@ package Jimmy.AddressBookGroup.core;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by daniellindkarlberg on 2016-12-20.
- */
 public class HelpMenu {
-
     List<Command> commands;
 
+    public HelpMenu() {
+        build();
+    }
 
     public void build() {
-
         commands = new ArrayList<>();
         commands.add(new AddContactCommand());
         commands.add(new ListCommand());

@@ -2,19 +2,18 @@ package Jimmy.AddressBookGroup.core;
 
 import java.util.List;
 
-/**
- * Created by daniellindkarlberg on 2016-12-20.
- */
 public class DeleteContactCommand implements Command {
 
 
     List<String> parameters;
 
+    public DeleteContactCommand() {
+    }
+
     public DeleteContactCommand(List<String> parameters){
 
         this.parameters = parameters;
     }
-
 
 
     @Override
@@ -28,13 +27,13 @@ public class DeleteContactCommand implements Command {
     }
 
     @Override
-    public void execute() throws InvalidCommandParameterException {
+    public void execute()  {
 
     }
 
     @Override
-    public boolean isValidParameterCount() {
-        return false;
+    public void validate() throws InvalidCommandParameterException {
+
     }
 
 }

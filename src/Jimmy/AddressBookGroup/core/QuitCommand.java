@@ -12,6 +12,8 @@ public class QuitCommand implements Command {
         this.parameters = parameters;
     }
 
+    public QuitCommand() {
+    }
 
     @Override
     public String getname() {
@@ -24,12 +26,12 @@ public class QuitCommand implements Command {
     }
 
     @Override
-    public void execute() throws InvalidCommandParameterException {
+    public void execute()  {
 
     }
 
     @Override
-    public boolean isValidParameterCount() {
-        return false;
+    public void validate() throws InvalidCommandParameterException{
+
     }
 }

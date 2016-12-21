@@ -20,7 +20,7 @@ public class CommandInterpreter{
                 new QuitCommand(commandLine.parameters);
                 break;
             case ("help"):
-                new HelpCommand();
+                new HelpCommand(commandLine.parameters);
             default:
                 System.out.println("Invalid command.");
                 break;

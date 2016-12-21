@@ -6,12 +6,13 @@ public class SearchCommand implements Command {
 
     List<String> parameters;
 
+    public SearchCommand() {
+    }
+
     public SearchCommand(List<String> parameters){
 
         this.parameters = parameters;
     }
-
-
 
 
     @Override
@@ -25,12 +26,12 @@ public class SearchCommand implements Command {
     }
 
     @Override
-    public void execute() throws InvalidCommandParameterException {
+    public void execute()  {
 
     }
 
     @Override
-    public boolean isValidParameterCount() {
-        return false;
+    public void validate() throws InvalidCommandParameterException {
     }
 }
+

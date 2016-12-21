@@ -5,6 +5,8 @@ import java.util.List;
 public class HelpCommand implements Command {
 //TODO fixa namn variabler
 
+    final static String name = "Help";
+    final static String description = "Display help menu";
     List<String> parameters;
     HelpMenu helpMenu;
     ConsolePrinter consolePrinter;
@@ -13,6 +15,7 @@ public class HelpCommand implements Command {
         helpMenu = new HelpMenu();
         consolePrinter = new Console();
         this.parameters = parameters;
+        validate();
     }
 
     public HelpCommand() {
@@ -21,37 +24,30 @@ public class HelpCommand implements Command {
 
     @Override
     public String getname() {
-        return null;
+        return name;
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return description;
     }
 
     @Override
     public void execute() {
-
-        if (isValidParameterCount()){
-            consolePrinter.print(format());
-        } else {
-            try {
-                throw new InvalidCommandParameterException();
-            } catch (InvalidCommandParameterException e) {
-                //TODO remove stacktrace
-                e.printStackTrace();
-                consolePrinter.print("Invalid amount of parameters");
-            }
-        }
-
+        consolePrinter.print(format());
     }
 
     @Override
-    public boolean isValidParameterCount() {
+    public void validate()  {
         if (parameters.size() > 0) {
-            return false;
+            try {
+                throw new InvalidCommandParameterException();
+            } catch (InvalidCommandParameterException e) {
+                e.printStackTrace();
+            }
+        } else {
+            execute();
         }
-        return true;
     }
 
     public String format(){
@@ -64,8 +60,4 @@ public class HelpCommand implements Command {
         return s;
 
     }
-
-
-
-
 }
