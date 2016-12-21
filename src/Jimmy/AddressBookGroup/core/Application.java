@@ -23,3 +23,13 @@ public class Application {
         commandLineInterface.console.registerInputHandler(commandLineInterface);
     }
 }
+
+
+
+/*
+//todo CHANGES:
+//todo Application start method.
+//todo QuitCommand execute and constructor
+//todo Not closing scanner in console.
+
+ */
