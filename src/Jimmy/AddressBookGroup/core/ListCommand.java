@@ -1,27 +1,29 @@
 package Jimmy.AddressBookGroup.core;
 
 import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.Contact;
+import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.ContactFormatter;
 import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.Registry;
 import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.RemoteRegistry;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListCommand implements Command {
-
 
 
     final static String NAME = "list";
     final static String DESCRIPTION = "list contact";
     List<String> parameters;
     ConsolePrinter consolePrinter;
-    List<Contact> tempList;
+    List<Contact> tempList = new ArrayList<>();
 
-    public ListCommand(List<String> parameters){
+    public ListCommand(List<String> parameters) {
 
         this.parameters = parameters;
         consolePrinter = new Console();
         tempList.addAll(Registry.getInstance().getContacts());
         tempList.addAll(RemoteRegistry.getInstance().getContacts());
+        execute();
     }
 
     public ListCommand() {
@@ -40,10 +42,11 @@ public class ListCommand implements Command {
     @Override
     public void execute() {
 
-        for (Contact contact: tempList
-             ) {
-
+        if(tempList.isEmpty()){
+            consolePrinter.print("No contacts yet");
         }
+        consolePrinter.print(ContactFormatter.format(tempList));
+
 
     }
 
