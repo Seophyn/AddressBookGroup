@@ -1,6 +1,19 @@
 package Jimmy.AddressBookGroup.core;
 
+import java.util.List;
+
 public class SearchCommand implements Command {
+
+    List<String> parameters;
+
+    public SearchCommand(List<String> parameters){
+
+        this.parameters = parameters;
+    }
+
+
+
+
     @Override
     public String getname() {
         return null;
@@ -14,5 +27,10 @@ public class SearchCommand implements Command {
     @Override
     public void execute() throws InvalidCommandParameterException {
 
+    }
+
+    @Override
+    public boolean isValidParameterCount() {
+        return false;
     }
 }
