@@ -1,9 +1,6 @@
 package Jimmy.AddressBookGroup.core;
 
-import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.Contact;
-import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.ContactFormatter;
-import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.Registry;
-import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.RemoteRegistry;
+import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +20,7 @@ public class ListCommand implements Command {
         consolePrinter = new Console();
         tempList.addAll(Registry.getInstance().getContacts());
         tempList.addAll(RemoteRegistry.getInstance().getContacts());
-        execute();
+        validate();
     }
 
     public ListCommand() {
@@ -42,16 +39,28 @@ public class ListCommand implements Command {
     @Override
     public void execute() {
 
-        if(tempList.isEmpty()){
+        if (tempList.isEmpty()) {
             consolePrinter.print("No contacts yet");
         }
+        tempList = ContactListSorter.sort(tempList);
         consolePrinter.print(ContactFormatter.format(tempList));
 
 
     }
 
     @Override
-    public void validate() throws InvalidCommandParameterException {
+    public void validate() {
 
+        if (parameters.size() != 0) {
+            try {
+                throw new InvalidCommandParameterException();
+            } catch (InvalidCommandParameterException e) {
+                e.printStackTrace();
+                consolePrinter.print("Invalid amount of parameters");
+
+            }
+        } else {
+            execute();
+        }
     }
 }
