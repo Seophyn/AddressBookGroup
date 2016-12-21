@@ -1,6 +1,7 @@
 package Jimmy.AddressBookGroup.core;
 
-import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.RegistryPersister;
+import Jimmy.AddressBookGroup.core.codeCommands.CommandLineInterface;
+import Jimmy.AddressBookGroup.core.save.RegistryPersister;
 
 public class Application {
 
