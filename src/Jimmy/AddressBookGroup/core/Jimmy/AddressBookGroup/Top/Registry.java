@@ -28,12 +28,8 @@ public class Registry {
 
     }
 
-    public void deleteContact(String id){
-        for (int i = 0; i < contacts.size(); i++) {
-            if (contacts.get(i).getId().equals(id)){
-                contacts.remove(contacts.get(i));
-            }
-        }
+    public void deleteContact(int index){
+        contacts.remove(index);
     }
 
     public List<Contact> getContacts (){
