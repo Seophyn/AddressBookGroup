@@ -5,7 +5,7 @@ import java.util.List;
 public class HelpCommand implements Command {
 //TODO fixa namn variabler
 
-    final static String name = "Help";
+    final static String name = "help";
     final static String description = "Display help menu";
     List<String> parameters;
     HelpMenu helpMenu;

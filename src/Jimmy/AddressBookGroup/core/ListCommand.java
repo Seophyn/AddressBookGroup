@@ -5,6 +5,9 @@ import java.util.List;
 public class ListCommand implements Command {
 
 
+
+    final static String name = "list";
+    final static String description = "list contact";
     List<String> parameters;
 
     public ListCommand(List<String> parameters){

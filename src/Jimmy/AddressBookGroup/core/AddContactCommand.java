@@ -4,6 +4,9 @@ import java.util.List;
 
 public class AddContactCommand implements Command {
 
+
+    final static String name = "add";
+    final static String description = "adds a new contact";
     List<String> parameters;
 
     public AddContactCommand(List<String> parameters){
