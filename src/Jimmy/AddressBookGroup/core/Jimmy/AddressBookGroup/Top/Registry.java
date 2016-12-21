@@ -12,4 +12,8 @@ public class Registry {
         }
         return instance;
     }
+
+    public void addContact(String firstName, String lastName, String email){}
+
+    public void deleteContact(String id){}
 }
