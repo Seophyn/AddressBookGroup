@@ -1,5 +1,7 @@
 package Jimmy.AddressBookGroup.core;
 
+import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.RegistryPersister;
+
 import java.util.List;
 
 public class QuitCommand implements Command {
@@ -13,6 +15,8 @@ public class QuitCommand implements Command {
 
         this.parameters = parameters;
         consolePrinter = new Console();
+        execute();
+
     }
 
     public QuitCommand() {
@@ -30,6 +34,8 @@ public class QuitCommand implements Command {
 
     @Override
     public void execute()  {
+        new RegistryPersister().save();
+        Application.quit();
 
     }
 

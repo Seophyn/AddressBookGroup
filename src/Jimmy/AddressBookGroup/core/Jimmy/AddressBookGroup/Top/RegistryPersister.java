@@ -14,7 +14,7 @@ public class RegistryPersister {
                 //logger.info("Saving to file.");
             } catch (IOException e) {
                 //logger.severe("Error when trying to write to file." + " " + e);
-                System.out.println("An error occurred when trying to write to file.");
+                e.printStackTrace();
             }
         }
 

@@ -1,6 +1,8 @@
 package Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top;
 
-public class ContactDetails {
+import java.io.Serializable;
+
+public class ContactDetails implements Serializable {
     String firstName;
     String lastName;
     String email;

@@ -1,8 +1,9 @@
 package Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class LocalContact implements Contact, Comparable<LocalContact> {
+public class LocalContact implements Contact, Comparable<LocalContact>, Serializable {
 
     ContactDetails contactDetails;
     UUID id;

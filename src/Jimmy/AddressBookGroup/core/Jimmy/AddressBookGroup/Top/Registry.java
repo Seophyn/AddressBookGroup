@@ -1,13 +1,12 @@
 package Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Registry {
-
-    RegistryPersister registryPersister = new RegistryPersister();
+public class Registry implements Serializable {
 
     List<Contact> contacts = new ArrayList<>();
 
