@@ -4,16 +4,17 @@ import java.util.logging.Level;
 
 public class AutoSave implements Runnable {
 
+    RegistryPersister registryPersister = new RegistryPersister();
+
     public void run(){
         while (true) {
             try {
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
-                logger.log(Level.SEVERE, "InterruptedException", e);
+                //logger.log(Level.SEVERE, "InterruptedException", e);
             }
 
-            fileManager.writeFile(register.getRegister());
-        }
+            registryPersister.save();
         }
     }
 }

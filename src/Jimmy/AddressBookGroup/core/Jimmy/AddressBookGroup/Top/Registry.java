@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 
 public class Registry {
 
+    RegistryPersister registryPersister = new RegistryPersister();
+
     List<Contact> contacts = new ArrayList<>();
 
     private static Registry instance = null;
@@ -43,4 +45,8 @@ public class Registry {
     }
 
     public void load(){}
+
+    public void setContacts(List<Contact> contacts){
+        this.contacts = contacts;
+    }
 }
