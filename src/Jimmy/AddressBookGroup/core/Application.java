@@ -1,6 +1,7 @@
 package Jimmy.AddressBookGroup.core;
 
 import Jimmy.AddressBookGroup.core.codeCommands.CommandLineInterface;
+import Jimmy.AddressBookGroup.core.remote.CatalogueClient;
 import Jimmy.AddressBookGroup.core.save.RegistryPersister;
 
 public class Application {
@@ -17,6 +18,9 @@ public class Application {
 
     public void start(){
         new RegistryPersister().load();
+        CatalogueClient cc = new CatalogueClient();
+        Thread thread = new Thread(cc);
+        thread.start();
 
         CommandLineInterface commandLineInterface = new CommandLineInterface();
         commandLineInterface.console.registerInputHandler(commandLineInterface);

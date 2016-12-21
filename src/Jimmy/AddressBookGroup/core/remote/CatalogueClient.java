@@ -1,9 +1,11 @@
 package Jimmy.AddressBookGroup.core.remote;
 
+import Jimmy.AddressBookGroup.core.contactRegistry.RemoteRegistry;
+
 import java.io.*;
 import java.net.Socket;
 
-public class CatalogueClient {
+public class CatalogueClient implements Runnable {
 
     private String host;
     private int port;
@@ -11,7 +13,7 @@ public class CatalogueClient {
     final static String EXIT = "exit";
     Socket socket;
 
-    public CatalogueClient(String host, int port) {
+    public CatalogueClient() {
         this.host = host;
         this.port = port;
     }
@@ -19,7 +21,7 @@ public class CatalogueClient {
     public void connect(){
 
         try {
-            socket = new Socket(host, port);
+            socket = new Socket("172.20.201.44", 61616);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,4 +66,11 @@ public class CatalogueClient {
     }
 
     public void disconnect(){}
+
+    @Override
+    public void run() {
+        connect();
+        sendRequest("");
+        waitForResponse();
+    }
 }
