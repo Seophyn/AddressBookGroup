@@ -46,8 +46,6 @@ public class Registry {
 
         tmpList.addAll(contacts.stream().filter(contact -> contact.getId().equals(term)).collect(Collectors.toList()));
 
-        Collections.sort(tmpList);
-
         return tmpList;
     }
 
