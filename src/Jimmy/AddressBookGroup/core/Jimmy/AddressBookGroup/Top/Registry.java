@@ -4,11 +4,12 @@ package Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class Registry implements Serializable {
 
-    List<Contact> contacts = new ArrayList<>();
+    private List<Contact> contacts = new ArrayList<>();
 
     private static Registry instance = null;
 
@@ -22,7 +23,7 @@ public class Registry implements Serializable {
     }
 
     public void addContact(String firstName, String lastName, String email){
-        contacts.add(new LocalContact(UniqueIdGenerator.id(), firstName, lastName, email));
+        contacts.add(new LocalContact(UUID.randomUUID(), firstName, lastName, email));
 
 
     }

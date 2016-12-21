@@ -7,10 +7,10 @@ import java.util.List;
 public class QuitCommand implements Command {
 
 
-    final static String NAME = "quit";
-    final static String DESCRIPTION = "quit application";
-    List<String> parameters;
-    ConsolePrinter consolePrinter;
+    private final static String NAME = "quit";
+    private final static String DESCRIPTION = "quit application";
+    private List<String> parameters;
+    private ConsolePrinter consolePrinter;
     public QuitCommand(List<String> parameters){
 
         this.parameters = parameters;

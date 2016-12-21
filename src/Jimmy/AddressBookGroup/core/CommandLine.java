@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CommandLine{
 
-     String command;
+    String command;
     List<String> parameters = new ArrayList<>();
 
     private CommandLine (){

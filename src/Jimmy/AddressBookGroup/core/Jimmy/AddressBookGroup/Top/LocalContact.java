@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class LocalContact implements Contact, Comparable<LocalContact>, Serializable {
 
-    ContactDetails contactDetails;
+    private ContactDetails contactDetails;
     UUID id;
 
     public LocalContact (UUID id, String firstName, String lastName, String email) {

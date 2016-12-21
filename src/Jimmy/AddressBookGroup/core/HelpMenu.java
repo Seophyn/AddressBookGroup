@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HelpMenu {
-    List<Command> commands;
+    private List<Command> commands;
 
     public HelpMenu() {
         build();

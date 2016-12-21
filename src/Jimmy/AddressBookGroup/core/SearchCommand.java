@@ -11,11 +11,11 @@ import java.util.List;
 public class SearchCommand implements Command {
 
 
-    final static String NAME = "search";
-    final static String DESCRIPTION = "search contacts";
-    List<String> parameters;
-    ConsolePrinter consolePrinter;
-    List<Contact> tempList = new ArrayList<>();
+    private final static String NAME = "search";
+    private final static String DESCRIPTION = "search contacts";
+    private List<String> parameters;
+    private ConsolePrinter consolePrinter;
+    private List<Contact> tempList = new ArrayList<>();
 
     public SearchCommand() {
     }

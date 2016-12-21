@@ -7,10 +7,10 @@ import java.util.List;
 public class AddContactCommand implements Command {
 
 
-    final static String NAME = "add";
-    final static String DESCRIPTION = "adds a new contact";
-    List<String> parameters;
-    ConsolePrinter consolePrinter;
+    private final static String NAME = "add";
+    private final static String DESCRIPTION = "adds a new contact";
+    private List<String> parameters;
+    private ConsolePrinter consolePrinter;
 
 
     public AddContactCommand(List<String> parameters) {

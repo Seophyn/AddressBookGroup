@@ -4,8 +4,8 @@ import java.io.*;
 import java.util.List;
 
 public class RegistryPersister {
-    Registry registry = Registry.getInstance();
-    File file = new File("registry");
+    private Registry registry = Registry.getInstance();
+    private File file = new File("registry");
 
     public synchronized void save (){
         {

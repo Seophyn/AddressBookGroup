@@ -8,7 +8,7 @@ public class RemoteRegistry {
 
     RemoteContact remoteContact;
 
-    List<Contact> remoteContacts = new ArrayList<>();
+    private List<Contact> remoteContacts = new ArrayList<>();
 
     private static RemoteRegistry instance = null;
 

@@ -9,10 +9,10 @@ public class DeleteContactCommand implements Command {
 
     //TODO testa delete funktion
 
-    final static String NAME = "delete";
-    final static String DESCRIPTION = "delete contact";
-    List<String> parameters;
-    ConsolePrinter consolePrinter;
+    private final static String NAME = "delete";
+    private final static String DESCRIPTION = "delete contact";
+    private List<String> parameters;
+    private ConsolePrinter consolePrinter;
 
     public DeleteContactCommand() {
     }

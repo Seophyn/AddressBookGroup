@@ -4,7 +4,7 @@ import java.util.logging.Level;
 
 public class AutoSave implements Runnable {
 
-    RegistryPersister registryPersister = new RegistryPersister();
+    private RegistryPersister registryPersister = new RegistryPersister();
 
     public void run(){
         while (true) {

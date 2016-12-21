@@ -4,11 +4,11 @@ import java.util.List;
 
 public class HelpCommand implements Command {
 
-    final static String NAME = "help";
-    final static String DESCRIPTION = "Display help menu";
-    List<String> parameters;
-    HelpMenu helpMenu;
-    ConsolePrinter consolePrinter;
+    private final static String NAME = "help";
+    private final static String DESCRIPTION = "Display help menu";
+    private List<String> parameters;
+    private HelpMenu helpMenu;
+    private ConsolePrinter consolePrinter;
 
     public HelpCommand(List<String> parameters) {
         helpMenu = new HelpMenu();

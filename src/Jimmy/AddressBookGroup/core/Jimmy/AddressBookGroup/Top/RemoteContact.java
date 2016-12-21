@@ -1,8 +1,8 @@
 package Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top;
 
 public class RemoteContact implements Contact, Comparable<RemoteContact> {
-    String id;
-    ContactDetails contactDetails;
+    private String id;
+    private ContactDetails contactDetails;
 
     @Override
     public String getId() {

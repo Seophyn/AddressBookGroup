@@ -8,11 +8,11 @@ import java.util.List;
 public class ListCommand implements Command {
 
 
-    final static String NAME = "list";
-    final static String DESCRIPTION = "list contact";
-    List<String> parameters;
-    ConsolePrinter consolePrinter;
-    List<Contact> tempList = new ArrayList<>();
+    private final static String NAME = "list";
+    private final static String DESCRIPTION = "list contact";
+    private List<String> parameters;
+    private ConsolePrinter consolePrinter;
+    private List<Contact> tempList = new ArrayList<>();
 
     public ListCommand(List<String> parameters) {
 
