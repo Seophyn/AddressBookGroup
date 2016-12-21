@@ -1,8 +1,7 @@
 package Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top;
 
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -10,7 +9,7 @@ public class Registry {
 
     LocalContact localContact;
 
-    ArrayList<Contact> contacts = new ArrayList<>();
+    List<Contact> contacts = new ArrayList<>();
 
     private static Registry instance = null;
 
