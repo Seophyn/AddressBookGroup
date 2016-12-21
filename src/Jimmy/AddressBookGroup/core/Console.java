@@ -14,7 +14,7 @@ public class Console implements ConsolePrinter {
         while (true){
             System.out.println("write");
             String scanString = scanner.nextLine();
-            if(scanString.substring(0, 4).equals("quit")){
+            if(scanString.equals("quit")){
                 scanner.close();
             }
             handler.handle(CommandLine.parse(scanString));
