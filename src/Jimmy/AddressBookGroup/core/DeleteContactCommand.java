@@ -7,6 +7,7 @@ import java.util.List;
 
 public class DeleteContactCommand implements Command {
 
+    //TODO testa delete funktion
 
     final static String NAME = "delete";
     final static String DESCRIPTION = "delete contact";
