@@ -1,10 +1,9 @@
 package Jimmy.AddressBookGroup.core;
 
-import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.Registry;
-import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.RegistryPersister;
+import Jimmy.AddressBookGroup.core.codeCommands.CommandLineInterface;
+import Jimmy.AddressBookGroup.core.save.RegistryPersister;
 
 public class Application {
-    CommandLineInterface commandLineInterface;
 
     public static void main(String[] args) {
         Application application = new Application();
@@ -19,7 +18,7 @@ public class Application {
     public void start(){
         new RegistryPersister().load();
 
-        commandLineInterface = new CommandLineInterface();
+        CommandLineInterface commandLineInterface = new CommandLineInterface();
         commandLineInterface.console.registerInputHandler(commandLineInterface);
     }
 }

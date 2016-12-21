@@ -1,5 +1,9 @@
 package Jimmy.AddressBookGroup.core;
 
+import Jimmy.AddressBookGroup.core.codeCommands.CommandLine;
+import Jimmy.AddressBookGroup.core.codeCommands.CommandLineInterface;
+import Jimmy.AddressBookGroup.core.formatPrinting.ConsolePrinter;
+
 import java.util.Scanner;
 
 public class Console implements ConsolePrinter {
