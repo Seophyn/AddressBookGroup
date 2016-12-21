@@ -1,7 +1,7 @@
 package Jimmy.AddressBookGroup.core;
 
-import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.Contact;
 import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.Registry;
+import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.RemoteRegistry;
 
 import java.util.List;
 
@@ -11,10 +11,6 @@ public class DeleteContactCommand implements Command {
     final static String NAME = "delete";
     final static String DESCRIPTION = "delete contact";
     List<String> parameters;
-    List<Contact> tempList;
-
-
-
     ConsolePrinter consolePrinter;
 
     public DeleteContactCommand() {
@@ -42,14 +38,20 @@ public class DeleteContactCommand implements Command {
             if (Registry.getInstance().getContacts().get(i).getId().equals(parameters.get(0))) {
                 Registry.getInstance().deleteContact(i);
                 consolePrinter.print("Contact was deleted");
-            } else {
-                consolePrinter.print("Contact was not deleted successfully");
+                return;
             }
         }
 
+        for (int i = 0; i < RemoteRegistry.getInstance().getContacts().size(); i++){
+            if (RemoteRegistry.getInstance().getContacts().get(i).getId().equals(parameters.get(0))) {
+                consolePrinter.print("Cannot delete remote contact");
+                return;
+            }
+        }
 
+        consolePrinter.print("Contact not found");
 
-    }
+        }
 
     @Override
     public void validate()  {
