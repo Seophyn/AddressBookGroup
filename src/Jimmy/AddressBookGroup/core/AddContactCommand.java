@@ -2,7 +2,6 @@ package Jimmy.AddressBookGroup.core;
 
 import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.Registry;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AddContactCommand implements Command {
@@ -10,7 +9,7 @@ public class AddContactCommand implements Command {
 
     final static String NAME = "add";
     final static String DESCRIPTION = "adds a new contact";
-    List<String> parameters = new ArrayList<>();
+    List<String> parameters;
     ConsolePrinter consolePrinter;
 
 

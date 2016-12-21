@@ -1,6 +1,5 @@
 package Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top;
 
-import java.util.Comparator;
 import java.util.List;
 
 public class ContactListSorter {
