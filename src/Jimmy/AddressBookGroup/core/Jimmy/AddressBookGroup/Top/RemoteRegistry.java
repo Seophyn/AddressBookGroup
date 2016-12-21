@@ -34,6 +34,6 @@ public class RemoteRegistry {
     }
 
     public void add(String id, String firstName, String lastName, String email){
-
+        remoteContact = new RemoteContact(id, firstName, lastName, email);
     }
 }

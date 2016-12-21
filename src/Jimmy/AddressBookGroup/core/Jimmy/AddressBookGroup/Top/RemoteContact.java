@@ -4,6 +4,14 @@ public class RemoteContact implements Contact, Comparable<RemoteContact> {
     String id;
     ContactDetails contactDetails;
 
+    public RemoteContact (String id, String firstName, String lastName, String email) {
+        this.id = id;
+        contactDetails = new ContactDetails();
+        contactDetails.firstName = firstName;
+        contactDetails.lastName = lastName;
+        contactDetails.email = email;
+    }
+
     @Override
     public String getId() {
         return this.id;

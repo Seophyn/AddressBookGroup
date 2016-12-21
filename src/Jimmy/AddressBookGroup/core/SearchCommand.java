@@ -41,7 +41,7 @@ public class SearchCommand implements Command {
 
     @Override
     public void execute() {
-boolean found = false;
+        boolean found = false;
         tempList = ContactListSorter.sort(tempList);
         for (Contact contact : tempList
                 ) {
