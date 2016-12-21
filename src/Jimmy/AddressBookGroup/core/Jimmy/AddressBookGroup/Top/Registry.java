@@ -7,8 +7,6 @@ import java.util.stream.Collectors;
 
 public class Registry {
 
-    LocalContact localContact;
-
     List<Contact> contacts = new ArrayList<>();
 
     private static Registry instance = null;
