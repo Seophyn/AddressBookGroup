@@ -5,6 +5,8 @@ import java.util.List;
 public class QuitCommand implements Command {
 
 
+    final static String name = "quit";
+    final static String description = "quit application";
     List<String> parameters;
 
     public QuitCommand(List<String> parameters){

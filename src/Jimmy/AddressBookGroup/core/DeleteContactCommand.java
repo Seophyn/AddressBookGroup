@@ -5,6 +5,8 @@ import java.util.List;
 public class DeleteContactCommand implements Command {
 
 
+    final static String name = "delete";
+    final static String description = "delete contact";
     List<String> parameters;
 
     public DeleteContactCommand() {

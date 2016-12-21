@@ -4,6 +4,9 @@ import java.util.List;
 
 public class SearchCommand implements Command {
 
+
+    final static String name = "search";
+    final static String description = "search contacts";
     List<String> parameters;
 
     public SearchCommand() {
