@@ -5,8 +5,8 @@ import java.util.List;
 public class SearchCommand implements Command {
 
 
-    final static String name = "search";
-    final static String description = "search contacts";
+    final static String NAME = "search";
+    final static String DESCRIPTION = "search contacts";
     List<String> parameters;
 
     public SearchCommand() {
@@ -19,13 +19,13 @@ public class SearchCommand implements Command {
 
 
     @Override
-    public String getname() {
-        return null;
+    public String getName() {
+        return NAME;
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return DESCRIPTION;
     }
 
     @Override

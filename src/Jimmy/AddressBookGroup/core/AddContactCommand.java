@@ -5,8 +5,8 @@ import java.util.List;
 public class AddContactCommand implements Command {
 
 
-    final static String name = "add";
-    final static String description = "adds a new contact";
+    final static String NAME = "add";
+    final static String DESCRIPTION = "adds a new contact";
     List<String> parameters;
 
     public AddContactCommand(List<String> parameters){
@@ -18,13 +18,13 @@ public class AddContactCommand implements Command {
     }
 
     @Override
-    public String getname() {
-        return null;
+    public String getName() {
+        return NAME;
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return DESCRIPTION;
     }
 
     @Override

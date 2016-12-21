@@ -6,8 +6,8 @@ public class ListCommand implements Command {
 
 
 
-    final static String name = "list";
-    final static String description = "list contact";
+    final static String NAME = "list";
+    final static String DESCRIPTION = "list contact";
     List<String> parameters;
 
     public ListCommand(List<String> parameters){
@@ -19,13 +19,13 @@ public class ListCommand implements Command {
     }
 
     @Override
-    public String getname() {
-        return null;
+    public String getName() {
+        return NAME;
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return DESCRIPTION;
     }
 
     @Override

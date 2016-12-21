@@ -5,8 +5,8 @@ import java.util.List;
 public class QuitCommand implements Command {
 
 
-    final static String name = "quit";
-    final static String description = "quit application";
+    final static String NAME = "quit";
+    final static String DESCRIPTION = "quit application";
     List<String> parameters;
 
     public QuitCommand(List<String> parameters){
@@ -18,13 +18,13 @@ public class QuitCommand implements Command {
     }
 
     @Override
-    public String getname() {
-        return null;
+    public String getName() {
+        return NAME;
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return DESCRIPTION;
     }
 
     @Override

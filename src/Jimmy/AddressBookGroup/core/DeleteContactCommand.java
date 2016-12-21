@@ -5,8 +5,8 @@ import java.util.List;
 public class DeleteContactCommand implements Command {
 
 
-    final static String name = "delete";
-    final static String description = "delete contact";
+    final static String NAME = "delete";
+    final static String DESCRIPTION = "delete contact";
     List<String> parameters;
 
     public DeleteContactCommand() {
@@ -19,13 +19,13 @@ public class DeleteContactCommand implements Command {
 
 
     @Override
-    public String getname() {
-        return null;
+    public String getName() {
+        return NAME;
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return DESCRIPTION;
     }
 
     @Override
