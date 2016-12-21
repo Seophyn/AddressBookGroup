@@ -9,10 +9,12 @@ public class ListCommand implements Command {
     final static String NAME = "list";
     final static String DESCRIPTION = "list contact";
     List<String> parameters;
+    ConsolePrinter consolePrinter;
 
     public ListCommand(List<String> parameters){
 
         this.parameters = parameters;
+        consolePrinter = new Console();
     }
 
     public ListCommand() {

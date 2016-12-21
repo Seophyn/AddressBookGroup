@@ -8,6 +8,7 @@ public class DeleteContactCommand implements Command {
     final static String NAME = "delete";
     final static String DESCRIPTION = "delete contact";
     List<String> parameters;
+    ConsolePrinter consolePrinter;
 
     public DeleteContactCommand() {
     }
@@ -15,6 +16,7 @@ public class DeleteContactCommand implements Command {
     public DeleteContactCommand(List<String> parameters){
 
         this.parameters = parameters;
+        consolePrinter = new Console();
     }
 
 

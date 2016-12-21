@@ -8,10 +8,11 @@ public class QuitCommand implements Command {
     final static String NAME = "quit";
     final static String DESCRIPTION = "quit application";
     List<String> parameters;
-
+    ConsolePrinter consolePrinter;
     public QuitCommand(List<String> parameters){
 
         this.parameters = parameters;
+        consolePrinter = new Console();
     }
 
     public QuitCommand() {
