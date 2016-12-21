@@ -5,7 +5,7 @@ public class ContactDetails {
     String lastName;
     String email;
 
-    public String getFirstName() {
+    /*public String getFirstName() {
         return firstName;
     }
 
@@ -15,5 +15,5 @@ public class ContactDetails {
 
     public String getEmail() {
         return email;
-    }
+    }*/
 }
