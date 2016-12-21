@@ -3,7 +3,6 @@ package Jimmy.AddressBookGroup.core;
 import java.util.List;
 
 public class HelpCommand implements Command {
-//TODO fixa namn variabler
 
     final static String NAME = "help";
     final static String DESCRIPTION = "Display help menu";

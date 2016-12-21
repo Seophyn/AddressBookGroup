@@ -2,12 +2,10 @@ package Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top;
 
 import java.util.ArrayList;
 
-/**
- * Created by Thomas on 2016-12-21.
- */
+
 public class ContactFormatter {
 
-    private String format(ArrayList<Contact> contacts) {
+    public static String format(ArrayList<Contact> contacts) {
 
     StringBuilder stringbuilder = new StringBuilder();
 
