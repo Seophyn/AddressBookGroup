@@ -1,6 +1,6 @@
 package Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top;
 
-public class AutoSave {
+public class AutoSave    {
 
     public void run(){}
 }

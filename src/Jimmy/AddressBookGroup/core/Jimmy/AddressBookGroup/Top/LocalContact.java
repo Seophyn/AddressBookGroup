@@ -2,7 +2,7 @@ package Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top;
 
 import java.util.UUID;
 
-public class LocalContact implements Contact {
+public class LocalContact implements Contact, Comparable<LocalContact> {
 
 
     ContactDetails contactDetails;
@@ -36,5 +36,10 @@ public class LocalContact implements Contact {
     public String getEmailAddress() {
         return contactDetails.email;
 
+    }
+
+    @Override
+    public int compareTo(LocalContact localContact) {
+        return this.getFirstName().compareToIgnoreCase((localContact.getFirstName()));
     }
 }

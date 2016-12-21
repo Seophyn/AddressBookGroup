@@ -1,6 +1,6 @@
 package Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top;
 
-public class RemoteContact implements Contact {
+public class RemoteContact implements Contact, Comparable<RemoteContact> {
     String id;
     ContactDetails contactDetails;
 
@@ -22,5 +22,10 @@ public class RemoteContact implements Contact {
     @Override
     public String getEmailAddress() {
         return contactDetails.email;
+    }
+
+    @Override
+    public int compareTo(RemoteContact remoteContact) {
+        return this.getFirstName().compareToIgnoreCase((remoteContact.getFirstName()));
     }
 }

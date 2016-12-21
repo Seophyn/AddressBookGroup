@@ -6,4 +6,5 @@ public interface Contact {
     String getFirstName();
     String getLastName();
     String getEmailAddress();
+
 }
