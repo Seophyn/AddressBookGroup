@@ -4,11 +4,10 @@ import java.util.UUID;
 
 public class LocalContact implements Contact, Comparable<LocalContact> {
 
-
     ContactDetails contactDetails;
     UUID id;
 
-    public LocalContact(UUID id, String firstName, String lastName, String email) {
+    public LocalContact (UUID id, String firstName, String lastName, String email) {
         this.id = id;
         contactDetails = new ContactDetails();
         contactDetails.firstName = firstName;
