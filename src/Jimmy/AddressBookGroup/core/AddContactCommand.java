@@ -4,8 +4,12 @@ import java.util.List;
 
 public class AddContactCommand implements Command {
 
-    //Registry registry;
     List<String> parameters;
+
+    public AddContactCommand(List<String> parameters){
+
+        this.parameters = parameters;
+    }
 
 
 
