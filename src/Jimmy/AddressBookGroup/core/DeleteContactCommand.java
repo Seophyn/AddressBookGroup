@@ -1,5 +1,6 @@
 package Jimmy.AddressBookGroup.core;
 
+import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.Contact;
 import Jimmy.AddressBookGroup.core.Jimmy.AddressBookGroup.Top.Registry;
 
 import java.util.List;
@@ -10,6 +11,10 @@ public class DeleteContactCommand implements Command {
     final static String NAME = "delete";
     final static String DESCRIPTION = "delete contact";
     List<String> parameters;
+    List<Contact> tempList;
+
+
+
     ConsolePrinter consolePrinter;
 
     public DeleteContactCommand() {
