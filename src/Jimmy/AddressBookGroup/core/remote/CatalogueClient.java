@@ -47,21 +47,15 @@ public class CatalogueClient {
            InputStreamReader isr = new InputStreamReader(is);
            BufferedReader reader = new BufferedReader(isr);
 
+           String line;
 
-            String line;
 
-            while (true) {
-                line = reader.readLine();
-                System.out.println(line);
+            while ((line = reader.readLine()) != null) {
+                s += line + "\n";
 
-                if(line == null){
-                    break;
-                }
-            }
+            }  // for (String line = reader.readLine(); line != null; line = reader.readLine()) {
 
-            //for (String line = reader.readLine(); line != null; line = reader.readLine()) {
-
-              // s += line;
+             // s += line;
 
            //}
 
@@ -72,6 +66,8 @@ public class CatalogueClient {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
         return s;
     }
 
