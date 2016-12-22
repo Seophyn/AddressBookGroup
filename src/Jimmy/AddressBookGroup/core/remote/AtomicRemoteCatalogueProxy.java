@@ -8,7 +8,7 @@ import java.util.List;
 public class AtomicRemoteCatalogueProxy implements RemoteCatalogueProxy {
 
     final static String REQUEST = "getall" +"\n";
-    final static String EXIT = "exit";
+    final static String EXIT = "exit"  + "\n";
     private CatalogueClient catalogueClient;
 private List<String> contacts;
     public AtomicRemoteCatalogueProxy(String host, int port){
@@ -17,9 +17,9 @@ private List<String> contacts;
         catalogueClient.connect();
         catalogueClient.sendRequest(REQUEST);
         //lineSeparator(catalogueClient.waitForResponse());
-        String s = catalogueClient.waitForResponse();
-        System.out.println(s);
-        catalogueClient.disconnect(EXIT);
+        //catalogueClient.disconnect(EXIT);
+        catalogueClient.waitForResponse();
+        catalogueClient.sendRequest(EXIT);
     }
 
 

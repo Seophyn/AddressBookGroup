@@ -4,6 +4,7 @@ import Jimmy.AddressBookGroup.core.contactRegistry.RemoteRegistry;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class CatalogueClient {
 
@@ -47,12 +48,25 @@ public class CatalogueClient {
            BufferedReader reader = new BufferedReader(isr);
 
 
-            for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+            String line;
 
-               s += line;
+            while (true) {
+                line = reader.readLine();
+                System.out.println(line);
 
-           }
+                if(line == null){
+                    break;
+                }
+            }
 
+            //for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+
+              // s += line;
+
+           //}
+
+
+            System.out.println("out");
             return s;
 
         } catch (IOException e) {

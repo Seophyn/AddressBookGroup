@@ -8,7 +8,7 @@ public class CatalogueLoader implements Runnable{
     @Override
     public void run() {
 
-        RemoteCatalogueFactory client1 = new RemoteCatalogueFactory("172.20.200.157",61616);
+        RemoteCatalogueFactory client1 = new RemoteCatalogueFactory("localhost",61616);
         RemoteCatalogueProxy remoteCatalogueProxy1 = client1.create();
 
         for (String s: remoteCatalogueProxy1.getContacts()
