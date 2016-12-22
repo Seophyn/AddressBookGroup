@@ -9,11 +9,10 @@ public class CatalogueClient implements Runnable {
 
     private String host;
     private int port;
-    final static String REQUEST = "getall" + "\n";
-    final static String EXIT = "exit" + "\n";
+
     Socket socket;
 
-    public CatalogueClient() {
+    public CatalogueClient(String host, int port) {
         this.host = host;
         this.port = port;
     }
@@ -32,7 +31,7 @@ public class CatalogueClient implements Runnable {
             OutputStream outputStream = socket.getOutputStream();
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
             BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
-            bufferedWriter.write(REQUEST);
+            bufferedWriter.write(string);
             bufferedWriter.flush();
 
         } catch (IOException e) {
@@ -61,7 +60,7 @@ public class CatalogueClient implements Runnable {
         return null;
     }
 
-    public void disconnect(){}
+    public void disconnect(String string){}
 
     @Override
     public void run() {

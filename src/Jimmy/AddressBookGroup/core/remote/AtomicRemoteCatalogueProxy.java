@@ -6,10 +6,16 @@ import java.util.List;
 
 public class AtomicRemoteCatalogueProxy implements RemoteCatalogueProxy {
 
-   private CatalogueClient catalogueClient;
+    final static String REQUEST = "getall";
+    final static String EXIT = "exit";
+    private CatalogueClient catalogueClient;
 
     public AtomicRemoteCatalogueProxy(String host, int port){
-        catalogueClient = new CatalogueClient();
+        catalogueClient = new CatalogueClient(host, port);
+        catalogueClient.connect();
+        catalogueClient.sendRequest(REQUEST);
+        catalogueClient.waitForResponse();
+        catalogueClient.disconnect(EXIT);
     }
 
 
