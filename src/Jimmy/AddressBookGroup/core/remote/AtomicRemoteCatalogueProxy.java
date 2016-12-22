@@ -16,13 +16,13 @@ private List<String> contacts;
         catalogueClient = new CatalogueClient(host, port);
         catalogueClient.connect();
         catalogueClient.sendRequest(REQUEST);
-        lineSeparator(catalogueClient.waitForResponse());
         catalogueClient.sendRequest(EXIT);
+        lineSeparator(catalogueClient.waitForResponse());
+
     }
 
 
     private void lineSeparator(String line){
-        //System.out.println(line);
         String[] splitLine = line.split("\n");
 
         for (String s:splitLine
