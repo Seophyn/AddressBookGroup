@@ -44,15 +44,13 @@ public class CatalogueClient implements Runnable {
            InputStream is = socket.getInputStream();
            InputStreamReader isr = new InputStreamReader(is);
            BufferedReader reader = new BufferedReader(isr);
+           String s= "";
 
-           for (String line = reader.readLine(); line != null; line = reader.readLine()) {
-               String[] splitLine = line.split(" ");
+            for (String line = reader.readLine(); line != null; line = reader.readLine()) {
 
-               if (splitLine.length > 1) {
-                   RemoteRegistry.getInstance().add(splitLine[0], splitLine[1], splitLine[2], splitLine[3]);
-               }
+               s += line;
            }
-
+            return s;
 
         } catch (IOException e) {
             e.printStackTrace();
