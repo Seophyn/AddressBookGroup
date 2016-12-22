@@ -45,19 +45,21 @@ public class CatalogueClient {
         try {
            InputStream is = socket.getInputStream();
            InputStreamReader isr = new InputStreamReader(is);
-           BufferedReader reader = new BufferedReader(isr);
+           //BufferedReader reader = new BufferedReader(isr);
+            Scanner scanner = new Scanner(isr);
 
-           String line;
+            //String line;
+            while (scanner.hasNextLine()){
+                s = scanner.nextLine();
+            }
 
 
-            while ((line = reader.readLine()) != null) {
-                s += line + "\n";
 
-            }  // for (String line = reader.readLine(); line != null; line = reader.readLine()) {
 
-             // s += line;
+            //while ((line = reader.readLine()) != null) {
+              //  s += line + "\n";
 
-           //}
+            //}
 
 
             System.out.println("out");

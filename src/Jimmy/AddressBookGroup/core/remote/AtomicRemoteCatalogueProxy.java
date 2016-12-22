@@ -16,8 +16,8 @@ private List<String> contacts;
         catalogueClient = new CatalogueClient(host, port);
         catalogueClient.connect();
         catalogueClient.sendRequest(REQUEST);
-        catalogueClient.sendRequest(EXIT);
         lineSeparator(catalogueClient.waitForResponse());
+        catalogueClient.sendRequest(EXIT);
     }
 
 

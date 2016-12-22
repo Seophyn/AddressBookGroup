@@ -13,7 +13,7 @@ public class CatalogueLoader implements Runnable{
 
         for (String s: remoteCatalogueProxy1.getContacts()
              ) {
-            System.out.println(s);
+
             String [] arg = s.split(" ");
             RemoteRegistry.getInstance().add(arg[0], arg[1], arg[2], arg[3]);
         }
