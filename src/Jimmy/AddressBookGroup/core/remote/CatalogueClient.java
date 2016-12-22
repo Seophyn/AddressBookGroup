@@ -5,7 +5,7 @@ import Jimmy.AddressBookGroup.core.contactRegistry.RemoteRegistry;
 import java.io.*;
 import java.net.Socket;
 
-public class CatalogueClient implements Runnable {
+public class CatalogueClient {
 
     private String host;
     private int port;
@@ -40,30 +40,28 @@ public class CatalogueClient implements Runnable {
     }
 
     public String waitForResponse(){
+        String s= "";
         try {
            InputStream is = socket.getInputStream();
            InputStreamReader isr = new InputStreamReader(is);
            BufferedReader reader = new BufferedReader(isr);
-           String s= "";
+
 
             for (String line = reader.readLine(); line != null; line = reader.readLine()) {
 
                s += line;
+
            }
+
             return s;
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return s;
     }
 
     public void disconnect(String string){}
 
-    @Override
-    public void run() {
-        connect();
-        sendRequest("");
-        waitForResponse();
-    }
+
 }

@@ -9,10 +9,10 @@ public class RemoteCatalogueFactory {
         this.port = port;
     }
 
-    public void create(){
+    public RemoteCatalogueProxy create(){
 
         RemoteCatalogueProxy proxy1 = new AtomicRemoteCatalogueProxy(host, port);
-
+return proxy1;
     }
 
 }

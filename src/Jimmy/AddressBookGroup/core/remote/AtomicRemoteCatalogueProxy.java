@@ -7,7 +7,7 @@ import java.util.List;
 
 public class AtomicRemoteCatalogueProxy implements RemoteCatalogueProxy {
 
-    final static String REQUEST = "getall";
+    final static String REQUEST = "getall" +"\n";
     final static String EXIT = "exit";
     private CatalogueClient catalogueClient;
 private List<String> contacts;
@@ -16,14 +16,16 @@ private List<String> contacts;
         catalogueClient = new CatalogueClient(host, port);
         catalogueClient.connect();
         catalogueClient.sendRequest(REQUEST);
-        lineSeparator(catalogueClient.waitForResponse());
+        //lineSeparator(catalogueClient.waitForResponse());
+        String s = catalogueClient.waitForResponse();
+        System.out.println(s);
         catalogueClient.disconnect(EXIT);
     }
 
 
     private void lineSeparator(String line){
-
-        String[] splitLine = line.split("\\n");
+        System.out.println(line);
+        String[] splitLine = line.split("\n");
 
         for (String s:splitLine
              ) {
