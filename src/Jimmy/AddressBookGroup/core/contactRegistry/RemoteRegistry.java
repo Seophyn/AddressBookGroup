@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 
 public class RemoteRegistry {
 
-    RemoteContact remoteContact;
 
     private List<Contact> remoteContacts = new ArrayList<>();
 
@@ -34,6 +33,7 @@ public class RemoteRegistry {
     }
 
     public void add(String id, String firstName, String lastName, String email){
-        remoteContact = new RemoteContact(id, firstName, lastName, email);
+        remoteContacts.add(new RemoteContact(id, firstName, lastName, email));
+
     }
 }
