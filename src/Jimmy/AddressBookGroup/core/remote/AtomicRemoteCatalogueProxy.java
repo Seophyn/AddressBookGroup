@@ -6,13 +6,15 @@ import java.util.List;
 
 public class AtomicRemoteCatalogueProxy implements RemoteCatalogueProxy {
 
-    public AtomicRemoteCatalogueProxy(String host, int port){
+   private CatalogueClient catalogueClient;
 
+    public AtomicRemoteCatalogueProxy(String host, int port){
+        catalogueClient = new CatalogueClient();
     }
 
 
     @Override
-    public List<Contact> getContacts() {
+    public List<String> getContacts() {
         return null;
     }
 }

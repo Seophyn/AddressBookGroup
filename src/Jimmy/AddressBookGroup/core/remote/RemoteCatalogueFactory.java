@@ -1,13 +1,17 @@
 package Jimmy.AddressBookGroup.core.remote;
 
 public class RemoteCatalogueFactory {
-    private int defaultPort;
+    private String host;
+    private int port;
 
-    public RemoteCatalogueFactory(int port){
-        defaultPort = port;
+    public RemoteCatalogueFactory(String host, int port){
+        this.host = host;
+        this.port = port;
     }
 
     public void create(){
+
+        RemoteCatalogueProxy proxy1 = new AtomicRemoteCatalogueProxy(host, port);
 
     }
 

@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface RemoteCatalogueProxy {
 
-    public List<Contact> getContacts();
+    public List<String> getContacts();
 }
