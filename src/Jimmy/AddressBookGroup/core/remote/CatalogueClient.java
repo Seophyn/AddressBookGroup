@@ -1,38 +1,40 @@
 package Jimmy.AddressBookGroup.core.remote;
-
-import Jimmy.AddressBookGroup.core.contactRegistry.RemoteRegistry;
-
 import java.io.*;
 import java.net.Socket;
-import java.util.Scanner;
+
 
 public class CatalogueClient {
 
     private String host;
     private int port;
+    private Socket socket;
+    private OutputStream outputStream;
+    private InputStream is;
 
-    Socket socket;
+
 
     public CatalogueClient(String host, int port) {
         this.host = host;
         this.port = port;
     }
 
+
     public void connect(){
 
         try {
-            socket = new Socket("172.20.200.185", 61616);
+            socket = new Socket(host, port);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
-    public void sendRequest(String string){
+    public void sendRequest(String request){
         try {
-            OutputStream outputStream = socket.getOutputStream();
+            outputStream = socket.getOutputStream();
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
             BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
-            bufferedWriter.write(string);
+            bufferedWriter.write(request);
             bufferedWriter.flush();
 
         } catch (IOException e) {
@@ -41,36 +43,51 @@ public class CatalogueClient {
     }
 
     public String waitForResponse(){
-        String s= "";
+        String response = "";
         try {
-           InputStream is = socket.getInputStream();
-           InputStreamReader isr = new InputStreamReader(is);
-           BufferedReader reader = new BufferedReader(isr);
-           // Scanner scanner = new Scanner(isr);
+            is = socket.getInputStream();
+            InputStreamReader isr = new InputStreamReader(is);
+            BufferedReader reader = new BufferedReader(isr);
 
             String line;
-           // while (scanner.hasNextLine()){
-             //   s = scanner.nextLine();
-            //}
 
             while ((line = reader.readLine()) != null) {
-                s += line + "\n";
 
+               if(line.equals("")){
+                   break;
+               }
+               else {
+                   response += line + "\n";
+               }
             }
 
-
-            System.out.println("out");
-            return s;
+            return response;
 
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-
-        return s;
+        return response;
     }
 
-    public void disconnect(String string){}
+
+    public void disconnect(){
+
+        sendRequest("exit" + "\n");
+
+    }
 
 
+  public void closeStreams(){
+
+        try {
+            is.close();
+            outputStream.close();
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
 }

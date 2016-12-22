@@ -11,8 +11,7 @@ public class RemoteCatalogueFactory {
 
     public RemoteCatalogueProxy create(){
 
-        RemoteCatalogueProxy proxy1 = new AtomicRemoteCatalogueProxy(host, port);
-return proxy1;
+        return new AtomicRemoteCatalogueProxy(host, port);
     }
 
 }
