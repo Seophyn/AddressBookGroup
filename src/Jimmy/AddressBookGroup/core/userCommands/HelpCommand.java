@@ -46,7 +46,7 @@ public class HelpCommand implements Command {
             try {
                 throw new InvalidCommandParameterException();
             } catch (InvalidCommandParameterException e) {
-                e.printStackTrace();
+                consolePrinter.print("Invalid amount of parameters");
             }
         } else {
             execute();

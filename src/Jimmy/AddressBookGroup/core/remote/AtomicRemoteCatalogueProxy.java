@@ -1,9 +1,6 @@
 package Jimmy.AddressBookGroup.core.remote;
 
-import Jimmy.AddressBookGroup.core.contactRegistry.Contact;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class AtomicRemoteCatalogueProxy implements RemoteCatalogueProxy {
@@ -30,10 +27,6 @@ public class AtomicRemoteCatalogueProxy implements RemoteCatalogueProxy {
             contacts.add(s);
         }
     }
-
-
-
-
 
     @Override
     public List<String> getContacts() {

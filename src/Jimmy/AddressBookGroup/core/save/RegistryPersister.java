@@ -20,7 +20,6 @@ public class RegistryPersister {
                 e.printStackTrace();
             }
         }
-
     }
     @SuppressWarnings("unchecked")
     public void load(){

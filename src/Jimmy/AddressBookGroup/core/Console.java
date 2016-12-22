@@ -12,19 +12,16 @@ public class Console implements ConsolePrinter {
     };
 
     public void registerInputHandler(CommandLineInterface handler){
-        System.out.println("Welcome to the Addressbook! Write ");
+        System.out.println("Welcome to the Addressbook!");
         Scanner scanner = new Scanner(System.in);
+        String scanString = "";
 
-        while (true){
-            System.out.println("write");
-            String scanString = scanner.nextLine();
-            /*if(scanString.equals("quit")){
-                scanner.close();
-            }*/
+        while (!scanString.equals("quit")) {
+            scanString = scanner.nextLine();
             handler.handle(CommandLine.parse(scanString));
-
-            }
         }
+            scanner.close();
+    }
 
     @Override
     public void print(String string) {

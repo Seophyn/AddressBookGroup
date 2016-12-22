@@ -9,7 +9,6 @@ import java.util.List;
 
 public class DeleteContactCommand implements Command {
 
-    //TODO testa delete funktion
 
     private final static String NAME = "delete";
     private final static String DESCRIPTION = "delete contact";
@@ -62,7 +61,7 @@ public class DeleteContactCommand implements Command {
             try {
                 throw new InvalidCommandParameterException();
             } catch (InvalidCommandParameterException e) {
-                e.printStackTrace();
+                consolePrinter.print("Invalid amount of parameters");
             }
         } else {
             execute();

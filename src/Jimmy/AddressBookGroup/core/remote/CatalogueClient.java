@@ -24,7 +24,7 @@ public class CatalogueClient {
         try {
             socket = new Socket(host, port);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Connection to remote catalogue, " + "host: " + host + " port: " + port + " was not successful\n");
         }
 
     }
@@ -37,9 +37,12 @@ public class CatalogueClient {
             bufferedWriter.write(request);
             bufferedWriter.flush();
 
-        } catch (IOException e) {
+        } catch (IOException e)  {
             e.printStackTrace();
+        } catch (NullPointerException e){
+            // do nothing
         }
+
     }
 
     public String waitForResponse(){
@@ -65,6 +68,8 @@ public class CatalogueClient {
 
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (NullPointerException e) {
+           // do nothing
         }
 
         return response;
@@ -86,6 +91,8 @@ public class CatalogueClient {
             socket.close();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (NullPointerException e) {
+            //do nothing
         }
 
 

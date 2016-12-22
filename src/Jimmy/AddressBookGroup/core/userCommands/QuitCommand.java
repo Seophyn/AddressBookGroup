@@ -13,11 +13,12 @@ public class QuitCommand implements Command {
     private final static String DESCRIPTION = "quit application";
     private List<String> parameters;
     private ConsolePrinter consolePrinter;
+
     public QuitCommand(List<String> parameters){
 
         this.parameters = parameters;
         consolePrinter = new Console();
-        execute();
+        validate();
 
     }
 
@@ -42,7 +43,15 @@ public class QuitCommand implements Command {
     }
 
     @Override
-    public void validate() throws InvalidCommandParameterException {
-
+    public void validate() {
+        if (parameters.size() != 0) {
+            try {
+                throw new InvalidCommandParameterException();
+            } catch (InvalidCommandParameterException e) {
+                consolePrinter.print("Invalid amount of parameters");
+            }
+        } else {
+            execute();
+        }
     }
 }

@@ -47,8 +47,8 @@ public class SearchCommand implements Command {
         tempList = ContactListSorter.sort(tempList);
         for (Contact contact : tempList
                 ) {
-            if (contact.getFirstName().startsWith(parameters.get(0))
-                    || contact.getLastName().startsWith(parameters.get(0))) {
+            if (contact.getFirstName().toLowerCase().startsWith(parameters.get(0).toLowerCase())
+                    || contact.getLastName().toLowerCase().startsWith(parameters.get(0).toLowerCase())) {
 
                 consolePrinter.print("ID: " + contact.getId() + '\n' +
                         "Firstname: " + contact.getFirstName() + '\n' +
@@ -70,7 +70,6 @@ public class SearchCommand implements Command {
             try {
                 throw new InvalidCommandParameterException();
             } catch (InvalidCommandParameterException e) {
-                e.printStackTrace();
                 consolePrinter.print("Invalid amount of parameters");
             }
         }

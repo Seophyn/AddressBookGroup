@@ -1,7 +1,6 @@
 package Jimmy.AddressBookGroup.core;
 
 import Jimmy.AddressBookGroup.core.codeCommands.CommandLineInterface;
-import Jimmy.AddressBookGroup.core.remote.CatalogueClient;
 import Jimmy.AddressBookGroup.core.remote.CatalogueLoader;
 import Jimmy.AddressBookGroup.core.save.RegistryPersister;
 
@@ -27,14 +26,3 @@ public class Application {
         commandLineInterface.console.registerInputHandler(commandLineInterface);
     }
 }
-
-
-
-/*
-//todo CHANGES:
-//todo Quit is static, change?
-//todo Application start method.
-//todo QuitCommand execute and constructor
-//todo Not closing scanner in console.
-
- */

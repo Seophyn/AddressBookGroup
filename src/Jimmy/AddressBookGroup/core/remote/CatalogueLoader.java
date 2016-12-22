@@ -15,14 +15,11 @@ public class CatalogueLoader implements Runnable{
              ) {
 
             String [] arg = s.split(" ");
-            RemoteRegistry.getInstance().add(arg[0], arg[1], arg[2], arg[3]);
+
+            if (arg.length == 4) {
+                RemoteRegistry.getInstance().add(arg[0], arg[1], arg[2], arg[3]);
+
+            }
         }
-
-
     }
-
-
-
-
-
 }
