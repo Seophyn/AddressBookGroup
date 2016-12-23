@@ -13,30 +13,31 @@ public class Registry implements Serializable {
 
     private static Registry instance = null;
 
-    private Registry(){}
+    private Registry() {
+    }
 
-    public static Registry getInstance(){
-        if(instance == null){
+    public static Registry getInstance() {
+        if (instance == null) {
             instance = new Registry();
         }
         return instance;
     }
 
-    public void addContact(String firstName, String lastName, String email){
+    public void addContact(String firstName, String lastName, String email) {
         contacts.add(new LocalContact(UUID.randomUUID(), firstName, lastName, email));
 
 
     }
 
-    public void deleteContact(int index){
+    public void deleteContact(int index) {
         contacts.remove(index);
     }
 
-    public List<Contact> getContacts (){
+    public List<Contact> getContacts() {
         return contacts;
     }
 
-    public List<Contact> search(String term){
+    public List<Contact> search(String term) {
         ArrayList<Contact> tmpList = new ArrayList<>();
 
         tmpList.addAll(contacts.stream().filter(contact -> contact.getId().equals(term)).collect(Collectors.toList()));
@@ -44,9 +45,10 @@ public class Registry implements Serializable {
         return tmpList;
     }
 
-    public void load(){}
+    public void load() {
+    }
 
-    public void setContacts(List<Contact> contacts){
+    public void setContacts(List<Contact> contacts) {
         this.contacts = contacts;
     }
 }

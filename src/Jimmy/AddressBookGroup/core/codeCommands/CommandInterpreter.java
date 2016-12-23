@@ -5,7 +5,7 @@ import Jimmy.AddressBookGroup.core.formatPrinting.ConsolePrinter;
 import Jimmy.AddressBookGroup.core.userCommands.*;
 
 
-public class CommandInterpreter{
+public class CommandInterpreter {
 
     private ConsolePrinter consolePrinter;
 
@@ -16,7 +16,7 @@ public class CommandInterpreter{
     public void interpret(CommandLine commandLine) {
 
         try {
-            switch(commandLine.command) {
+            switch (commandLine.command) {
                 case ("add"):
                     new AddContactCommand(commandLine.parameters);
                     break;

@@ -4,5 +4,5 @@ import Jimmy.AddressBookGroup.core.codeCommands.CommandLine;
 
 public interface InputHandler {
 
-        void handle(CommandLine commandLine);
+    void handle(CommandLine commandLine);
 }

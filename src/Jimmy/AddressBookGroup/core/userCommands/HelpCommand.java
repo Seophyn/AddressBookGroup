@@ -41,7 +41,7 @@ public class HelpCommand implements Command {
     }
 
     @Override
-    public void validate()  {
+    public void validate() {
         if (parameters.size() > 0) {
             try {
                 throw new InvalidCommandParameterException();
@@ -53,11 +53,12 @@ public class HelpCommand implements Command {
         }
     }
 
-    public String format(){
+    public String format() {
         String s = "";
 
-        for (Command command: helpMenu.getCommands())
-           s+= command.getName() + "\t" + command.getDescription() + "\n"; {
+        for (Command command : helpMenu.getCommands())
+            s += command.getName() + "\t" + command.getDescription() + "\n";
+        {
 
         }
         return s;

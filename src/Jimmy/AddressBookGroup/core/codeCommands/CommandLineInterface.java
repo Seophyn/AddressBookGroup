@@ -10,6 +10,6 @@ public class CommandLineInterface implements InputHandler {
 
     @Override
     public void handle(CommandLine commandLine) {
-            commandInterpreter.interpret(commandLine);
+        commandInterpreter.interpret(commandLine);
     }
 }

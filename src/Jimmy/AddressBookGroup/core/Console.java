@@ -11,7 +11,7 @@ public class Console implements ConsolePrinter {
 
     };
 
-    public void registerInputHandler(CommandLineInterface handler){
+    public void registerInputHandler(CommandLineInterface handler) {
         System.out.println("Welcome to the Addressbook!");
         Scanner scanner = new Scanner(System.in);
         String scanString = "";
@@ -20,7 +20,7 @@ public class Console implements ConsolePrinter {
             scanString = scanner.nextLine();
             handler.handle(CommandLine.parse(scanString));
         }
-            scanner.close();
+        scanner.close();
     }
 
     @Override

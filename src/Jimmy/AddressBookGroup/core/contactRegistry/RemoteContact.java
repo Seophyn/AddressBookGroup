@@ -4,7 +4,7 @@ public class RemoteContact implements Contact, Comparable<RemoteContact> {
     private String id;
     private ContactDetails contactDetails;
 
-    public RemoteContact (String id, String firstName, String lastName, String email) {
+    public RemoteContact(String id, String firstName, String lastName, String email) {
         this.id = id;
         contactDetails = new ContactDetails();
         contactDetails.firstName = firstName;

@@ -14,9 +14,7 @@ public class RegistryPersister {
         {
             try (ObjectOutputStream saveTo = new ObjectOutputStream(new FileOutputStream("registry"))) {
                 saveTo.writeObject(registry.getContacts());
-                //logger.info("Saving to file.");
             } catch (IOException e) {
-                //logger.severe("Error when trying to write to file." + " " + e);
                 e.printStackTrace();
             }
         }
@@ -31,7 +29,6 @@ public class RegistryPersister {
                 registry.setContacts((List<Contact>) read.readObject());
             } catch (IOException |
                     ClassNotFoundException e) {
-                //logger.severe("Error when trying to read from file." + " " + e);
                 System.out.println("An error occurred when trying to read from file.");
             }
         }

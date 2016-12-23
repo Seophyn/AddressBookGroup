@@ -58,9 +58,9 @@ public class SearchCommand implements Command {
             }
 
         }
-       if(!found){
-        consolePrinter.print("Contact not found");
-       }
+        if (!found) {
+            consolePrinter.print("Contact not found");
+        }
     }
 
     @Override

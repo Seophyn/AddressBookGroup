@@ -14,7 +14,7 @@ public class QuitCommand implements Command {
     private List<String> parameters;
     private ConsolePrinter consolePrinter;
 
-    public QuitCommand(List<String> parameters){
+    public QuitCommand(List<String> parameters) {
 
         this.parameters = parameters;
         consolePrinter = new Console();
@@ -36,7 +36,7 @@ public class QuitCommand implements Command {
     }
 
     @Override
-    public void execute()  {
+    public void execute() {
         new RegistryPersister().save();
         Application.quit();
 

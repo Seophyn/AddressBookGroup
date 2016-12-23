@@ -11,12 +11,12 @@ public class Application {
         application.start();
     }
 
-    public static void quit(){
+    public static void quit() {
         System.out.println("Exiting program, goodbye!");
         System.exit(0);
     }
 
-    public void start(){
+    public void start() {
         new RegistryPersister().load();
         CatalogueLoader cl = new CatalogueLoader();
         Thread thread = new Thread(cl);

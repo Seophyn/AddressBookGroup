@@ -1,4 +1,5 @@
 package Jimmy.AddressBookGroup.core.remote;
+
 import java.io.*;
 import java.net.Socket;
 
@@ -12,14 +13,13 @@ public class CatalogueClient {
     private InputStream is;
 
 
-
     public CatalogueClient(String host, int port) {
         this.host = host;
         this.port = port;
     }
 
 
-    public void connect(){
+    public void connect() {
 
         try {
             socket = new Socket(host, port);
@@ -29,7 +29,7 @@ public class CatalogueClient {
 
     }
 
-    public void sendRequest(String request){
+    public void sendRequest(String request) {
         try {
             outputStream = socket.getOutputStream();
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
@@ -37,15 +37,15 @@ public class CatalogueClient {
             bufferedWriter.write(request);
             bufferedWriter.flush();
 
-        } catch (IOException e)  {
+        } catch (IOException e) {
             e.printStackTrace();
-        } catch (NullPointerException e){
+        } catch (NullPointerException e) {
             // do nothing
         }
 
     }
 
-    public String waitForResponse(){
+    public String waitForResponse() {
         String response = "";
         try {
             is = socket.getInputStream();
@@ -56,12 +56,11 @@ public class CatalogueClient {
 
             while ((line = reader.readLine()) != null) {
 
-               if(line.equals("")){
-                   break;
-               }
-               else {
-                   response += line + "\n";
-               }
+                if (line.equals("")) {
+                    break;
+                } else {
+                    response += line + "\n";
+                }
             }
 
             return response;
@@ -69,21 +68,21 @@ public class CatalogueClient {
         } catch (IOException e) {
             e.printStackTrace();
         } catch (NullPointerException e) {
-           // do nothing
+            // do nothing
         }
 
         return response;
     }
 
 
-    public void disconnect(){
+    public void disconnect() {
 
         sendRequest("exit" + "\n");
 
     }
 
 
-  public void closeStreams(){
+    public void closeStreams() {
 
         try {
             is.close();

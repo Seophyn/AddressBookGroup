@@ -5,10 +5,10 @@ import java.util.List;
 
 public class AtomicRemoteCatalogueProxy implements RemoteCatalogueProxy {
 
-    private final static String REQUEST = "getall" +"\n";
+    private final static String REQUEST = "getall" + "\n";
     private List<String> contacts;
 
-    public AtomicRemoteCatalogueProxy(String host, int port){
+    public AtomicRemoteCatalogueProxy(String host, int port) {
         contacts = new ArrayList<>();
         CatalogueClient catalogueClient = new CatalogueClient(host, port);
         catalogueClient.connect();
@@ -19,11 +19,11 @@ public class AtomicRemoteCatalogueProxy implements RemoteCatalogueProxy {
     }
 
 
-    private void lineSeparator(String line){
+    private void lineSeparator(String line) {
         String[] splitLine = line.split("\n");
 
-        for (String s:splitLine
-             ) {
+        for (String s : splitLine
+                ) {
             contacts.add(s);
         }
     }

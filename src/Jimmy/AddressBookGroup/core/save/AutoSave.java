@@ -9,11 +9,8 @@ public class AutoSave implements Runnable {
             try {
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
-                //logger.log(Level.SEVERE, "InterruptedException", e);
             }
-
             registryPersister.save();
-           // System.out.println("Autosave Successful");
         }
     }
 }

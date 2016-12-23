@@ -18,7 +18,7 @@ public class DeleteContactCommand implements Command {
     public DeleteContactCommand() {
     }
 
-    public DeleteContactCommand(List<String> parameters){
+    public DeleteContactCommand(List<String> parameters) {
         this.parameters = parameters;
         consolePrinter = new Console();
         validate();
@@ -44,7 +44,7 @@ public class DeleteContactCommand implements Command {
             }
         }
 
-        for (int i = 0; i < RemoteRegistry.getInstance().getContacts().size(); i++){
+        for (int i = 0; i < RemoteRegistry.getInstance().getContacts().size(); i++) {
             if (RemoteRegistry.getInstance().getContacts().get(i).getId().equals(parameters.get(0))) {
                 consolePrinter.print("Cannot delete remote contact");
                 return;
@@ -53,10 +53,10 @@ public class DeleteContactCommand implements Command {
 
         consolePrinter.print("Contact not found");
 
-        }
+    }
 
     @Override
-    public void validate()  {
+    public void validate() {
         if (parameters.size() != 1) {
             try {
                 throw new InvalidCommandParameterException();
